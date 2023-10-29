@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.github.gustavoflor.wsg.protobuf";
+
+import "wallet.proto";
+
+message FindByIdRequest {
+  int64 id = 1;
+}
+
+service WalletService {
+
+  rpc findById(FindByIdRequest) returns (Wallet);
+
+}

@@ -1,0 +1,17 @@
+server:
+  port: ${PORT}
+grpc:
+  client:
+    config:
+      wallet-service:
+        host: ${WALLET_SERVICE_GRPC_HOST}
+        port: ${WALLET_SERVICE_GRPC_PORT}
+spring:
+  application:
+    name: account-service
+  cloud:
+    openfeign:
+      client:
+        config:
+          wallet-service:
+            url: ${WALLET_SERVICE_REST_URL}
